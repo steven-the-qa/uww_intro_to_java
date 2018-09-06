@@ -10,3 +10,11 @@ public class Tree {
 	}
 
 }
+
+/* returns 
+   x   
+  xxx  
+ xxxxx
+xxxxxxx
+   x
+*/
