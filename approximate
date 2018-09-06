@@ -8,3 +8,6 @@ public class Approximate {
 	}
 
 }
+
+//returns 2.9760461760461765
+//You must ALWAYS use '1.0' instead of '1' for mathematical operations
