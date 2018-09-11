@@ -1,5 +1,6 @@
 package circle;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Circle_Area {
@@ -7,6 +8,7 @@ public class Circle_Area {
 	public static void main(String[] args) {
 		// Declare scanner and get radius from user
 		Scanner s = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.00");
 		System.out.println("Enter the radius: ");
 		double radius = s.nextDouble();
 		
@@ -14,7 +16,7 @@ public class Circle_Area {
 		double area = Math.PI*radius*radius;
 		
 		//Display the area
-		System.out.println("The area of circle with radius " + radius + " is " + area);
+		System.out.println("The area of circle with radius " + radius + " is " + df.format(area));
 	}
 
 }
