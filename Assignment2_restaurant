@@ -12,23 +12,25 @@ public class RestaurantBill {
 		// Declare scanner and get radius from user
 		Scanner s = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("$0.00");
+		DecimalFormat tf = new DecimalFormat("0.00%");
+		
 		
 		String chargeStr = JOptionPane.showInputDialog(null, "Enter the charge for the meal: ");
 		double charge = Double.parseDouble(chargeStr);
 		String taxRateStr = JOptionPane.showInputDialog(null, "Enter the tax rate: ");
 		double taxRate = Double.parseDouble(taxRateStr);
 		String tipStr = JOptionPane.showInputDialog(null, "Enter the tip rate: ");
-		double tip = Double.parseDouble(tipStr) * charge;
+		double tip = (Double.parseDouble(tipStr));
 		double tax = taxRate * charge;
-
 		//Calculate the area
 		
 		
 		//Display the area
 		System.out.println("Bill Information: ");
-		System.out.println("Meal charge: " + charge);
-		System.out.println("Tax: (" + taxRate + ")=" + tax);
-		System.out.println("Tip: " + tip);
+		System.out.println("Meal charge: \t\t" + charge);
+		System.out.println("Tax: (" + tf.format(taxRate) + ")\t\t" + tax);
+		System.out.println("Tip: (" + tf.format(tip) + ")\t\t" + tip*charge);
+		
 	}
 
 }
