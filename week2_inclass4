@@ -1,0 +1,27 @@
+
+package circle_area1;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane; // Input message box method
+
+
+public class CircleArea1 {
+
+	public static void main(String[] args) {
+		// Declare scanner and get radius from user
+		Scanner s = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.00");
+		
+		String userIn = JOptionPane.showInputDialog(null,"Enter radius: "); //Takes input from input field in message box
+		double radius = Double.parseDouble(userIn); //Converts radius input from message window to type 'double'
+		
+		//Calculate the area
+		double area = Math.PI*radius*radius;
+		
+		//Display the area
+		System.out.println("The area of circle with radius " + radius + " is " + df.format(area)); //Prints the result using the converted input
+	}
+
+}
