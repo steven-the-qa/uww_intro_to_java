@@ -1,0 +1,34 @@
+package restaurantBill;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane; // Input message box method
+
+
+public class RestaurantBill {
+
+	public static void main(String[] args) {
+		// Declare scanner and get radius from user
+		Scanner s = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("$0.00");
+		
+		String chargeStr = JOptionPane.showInputDialog(null, "Enter the charge for the meal: ");
+		double charge = Double.parseDouble(chargeStr);
+		String taxRateStr = JOptionPane.showInputDialog(null, "Enter the tax rate: ");
+		double taxRate = Double.parseDouble(taxRateStr);
+		String tipStr = JOptionPane.showInputDialog(null, "Enter the tip rate: ");
+		double tip = Double.parseDouble(tipStr) * charge;
+		double tax = taxRate * charge;
+
+		//Calculate the area
+		
+		
+		//Display the area
+		System.out.println("Bill Information: ");
+		System.out.println("Meal charge: " + charge);
+		System.out.println("Tax: (" + taxRate + ")=" + tax);
+		System.out.println("Tip: " + tip);
+	}
+
+}
