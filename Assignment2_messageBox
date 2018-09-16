@@ -1,0 +1,18 @@
+package messageBox;
+
+import javax.swing.JOptionPane; // Input message box method
+import java.text.DecimalFormat; //Decimal formatter
+
+public class MessageBox {
+
+	public static void main(String[] args) {
+		//Get data in feet
+		DecimalFormat df = new DecimalFormat("0.00");
+		String feetStr = JOptionPane.showInputDialog(null, "Enter a value in feet: ");
+		double feet = Double.parseDouble(feetStr);
+		double meters = feet * 0.3048;
+		String metersStr = feet + " feet is " + df.format(meters) + " meters!";
+		JOptionPane.showMessageDialog(null,metersStr);
+	}
+
+}
