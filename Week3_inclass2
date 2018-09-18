@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class SummingDigits {
+
+	public static void main(String[] args) {
+		int userIn, result;
+		//Declare a Scanner object
+		Scanner scnr = new Scanner(System.in);
+		//Whale beluga = scnr.nextWhale();
+		System.out.println("Enter an integer: ");
+		userIn = scnr.nextInt();
+		int ones, tens;
+		ones = userIn % 10;
+		tens = userIn / 10;
+		result = ones + tens;
+		System.out.println("ones: " + ones);
+		System.out.println("tens: " + tens);
+		System.out.print("The sum of the digits is " + result);
+	}
+
+}
