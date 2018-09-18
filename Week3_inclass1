@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Exercise {
+
+	public static void main(String[] args) {
+		/*1
+		//double temperature = 98.6;
+		//System.out.println(temperature);*/
+		
+		/* 2
+		 * double first = 5.7;
+		int second = 3;
+		System.out.println("first is " + first + " and second = " + second); 
+		*/
+		
+		/* 3 
+		 * Scanner s = new Scanner(System.in);
+		int x = s.nextInt();
+		*/
+		
+		/* 4
+		 newScore = oldScore;
+		 */
+		
+		/* 5
+		 final int MONTHS_IN_DECADE = MONTHS_IN_YEAR * 10;
+		 */
+		
+		/* 6
+		 int children = 195;
+		 int families = 86;
+		 double average = children / (double)families;
+		 System.out.print("The average number of children per family is " + average);
+		 */
+		
+		/* 7
+		 //Modulo operator
+		 15 % 3 = 0; //The division has no remainder because 3 goes evenly into 15 5 times
+		 15 % 4 = 3; //The remainder from the division is 3 because 4 goes into 15 3 times with 3 left over
+		 */
+	}
+
+}
