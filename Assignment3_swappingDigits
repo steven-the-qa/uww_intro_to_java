@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class SwappingDigits {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		System.out.println("Enter an integer: ");
+		int userIn = scnr.nextInt();
+		int ones = userIn % 10;
+		int tens = userIn / 10;;
+		String swapped = String.valueOf(ones) + String.valueOf(tens);
+		int newNum = Integer.parseInt(swapped);
+		System.out.print("The double of the number " + userIn + " with swapped digits is " + (newNum * 2));
+	}
+
+}
