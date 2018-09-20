@@ -1,0 +1,39 @@
+public static void main(String[] args) {
+		// Declare scanner
+		Scanner scnr = new Scanner(System.in);
+		//Declare 2 variables and set their values from input
+		System.out.println("What is the base?");
+		int base = scnr.nextInt();
+		System.out.println("What is the exponent?");
+		int exponent = scnr.nextInt();
+		//Print table titles
+		System.out.println("a" + "\t" + "b" + "\t" + "pow(a,b)");
+		//Start printing data
+		System.out.println(base + "\t" + exponent + "\t" + Math.pow(base, exponent));
+		base += 1;
+		exponent += 1;
+		System.out.println(base + "\t" + exponent + "\t" + Math.pow(base, exponent));
+		base += 1;
+		exponent += 1;
+		System.out.println(base + "\t" + exponent + "\t" + Math.pow(base, exponent));
+		base += 1;
+		exponent += 1;
+		System.out.println(base + "\t" + exponent + "\t" + Math.pow(base, exponent));
+		base += 1;
+		exponent += 1;
+		System.out.println(base + "\t" + exponent + "\t" + Math.pow(base, exponent));
+	}
+
+//Make a table of bases & exponents & their resulting values, incremented by +1 in the base & exponent columns
+
+//OUTPUT
+What is the base?
+3
+What is the exponent?
+4
+a	b	pow(a,b)
+3	4	81.0
+4	5	1024.0
+5	6	15625.0
+6	7	279936.0
+7	8	5764801.0
