@@ -1,0 +1,17 @@
+package windChill;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class WindChill {
+
+	public static void main(String[] args) {
+		// Declare scanner
+		Scanner scnr = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.0000");
+		System.out.println("Enter the temperature in Fahrenheit between -58°F and 41°F: ");
+		int temp = scnr.nextInt();
+		System.out.println("Enter the wind speed (>=2) in miles per hour: ");
+		int wind = scnr.nextInt();
+		double chill = 35.74 + (0.6215 * temp) - (35.75 * Math.pow(wind, 0.16)) + (0.4275 * temp * Math.pow(wind, 0.16));
+		System.out.println("The wind chill index is: " + df.format(chill));
+	}
+}
