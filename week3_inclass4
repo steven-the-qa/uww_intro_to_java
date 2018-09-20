@@ -1,0 +1,11 @@
+public class TestBoolean {
+
+	public static void main(String[] args) {
+		// Declare scanner
+		Scanner scnr = new Scanner(System.in);
+		System.out.println("Enter an integer:  ");
+		int a = scnr.nextInt();
+		boolean bool = (a % 2 == 0) && (a % 3 == 0);
+		System.out.println("Stating that " + a + " is divisible by 2 AND 3 is a " + bool + " statement, my good sir. --Alfred");
+	}
+}
