@@ -1,0 +1,17 @@
+package salesBonus;
+import java.util.Scanner;
+public class SalesBonus {
+
+	public static void main(String[] args) {
+		int bonus, goodsSold;
+		Scanner s = new Scanner(System.in);
+		System.out.println("How many goods did you sell this quarter?");
+		goodsSold = s.nextInt();
+		if (goodsSold > 500000) {
+			bonus = 10000;
+			System.out.println("You sold more than 500,000 goods! You receive a $10,000 bonus!");
+		}
+
+	}
+
+}
