@@ -1,9 +1,12 @@
 package lessThanTen;
-
+import java.util.Scanner;
 public class LessThanTen {
 
 	public static void main(String[] args) {
-		int grossPay = 9999;
+		int grossPay;
+		Scanner s = new Scanner(System.in);
+		System.out.println("How much is the gross pay?")
+		grossPay = s.nextInt();
 		if (grossPay < 10000)
 			System.out.println("The gross pay is less than $10,000");
 
