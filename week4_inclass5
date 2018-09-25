@@ -29,3 +29,4 @@ public class PayrollProgram {
 		}
 	}
 
+//Calculates, regular pay, overtime pay, and gross pay as determined by the input of pay rate and hours worked
