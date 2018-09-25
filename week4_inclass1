@@ -1,0 +1,12 @@
+package oneWayIf;
+
+public class OneWayIf {
+
+	public static void main(String[] args) {
+		int score = 57; 
+		if (score >= 60) 
+			System.out.println("Passed!");
+		
+	}
+
+}
