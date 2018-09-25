@@ -1,0 +1,31 @@
+package payRollProgram;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class PayrollProgram {
+
+	public static void main(String[] args) {
+		double rate, hours, regular, overtime, overtimePay, gross;
+		Scanner s = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("$ 0.00");
+		System.out.println("Enter the pay rate and hours worked(separated by a space): ");
+		String payAndHours = s.nextLine();
+		String[] arr = payAndHours.split(" ");
+		rate = Double.parseDouble(arr[0]);
+		hours = Double.parseDouble(arr[1]);
+		if (hours > 40 && hours < 60) {
+			overtime = hours - 40;
+			regular = rate * 40;
+			overtimePay = rate * overtime * 1.5;
+			gross = regular + overtimePay;
+		}
+		else {
+			regular = rate * hours;
+			gross = regular;
+			overtime = 0;
+			overtimePay = 0;
+		}
+		System.out.println("Summary: " + "\n\n\t" + "Regular Pay: " + df.format(regular) + "\n\t" + "Overtime Pay: " + 
+		df.format(overtimePay) + "\n\t" + "Gross Pay: " + df.format(gross));
+		}
+	}
+
