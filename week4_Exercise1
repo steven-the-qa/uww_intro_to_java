@@ -1,0 +1,12 @@
+package lessThanTen;
+
+public class LessThanTen {
+
+	public static void main(String[] args) {
+		int grossPay = 9999;
+		if (grossPay < 10000)
+			System.out.println("The gross pay is less than $10,000");
+
+	}
+
+}
