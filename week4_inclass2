@@ -1,0 +1,15 @@
+package larger;
+
+public class Larger {
+
+	public static void main(String[] args) {
+
+		int number1 = 56, number2 = 56;
+		
+		if (number1 > number2)
+			System.out.println("Larger number is " + number1);
+		else System.out.println("Larger number is " + number2);
+	}
+
+}
+//Prints number2 beca
