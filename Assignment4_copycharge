@@ -1,1 +1,27 @@
+package copyCharge;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class CopyCharge {
 
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("$0.00");
+		System.out.print("Enter the number of copies ordered: ");
+		int copiesNum = s.nextInt();
+		int overCopies = 0;
+		double cost = 0;
+		System.out.println("\n" + "You ordered " + copiesNum + " copies.");
+		
+		if (copiesNum > 50) {
+			overCopies = copiesNum - 50;
+			cost += overCopies*0.05;
+		}
+		int firstFifty = copiesNum -= overCopies;
+		cost += firstFifty * 0.08;
+		if (overCopies > 0)
+			System.out.println("The total cost is: (50 x $0.08) + (" + overCopies + " x $0.05) = " + df.format(cost));
+		else 
+			System.out.println("The total cost is: " + firstFifty + " x $0.08 = " + df.format(cost));
+		}
+
+}
