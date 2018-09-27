@@ -1,1 +1,39 @@
+package speedingFine;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class SpeedingFine {
 
+	public static void main(String[] args) {
+		DecimalFormat df = new DecimalFormat("$0.00");
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the speed limit: ");
+		int speedLimit = s.nextInt();
+		System.out.println("Enter the clocked speed: ");
+		int clockedSpeed = s.nextInt();
+		String verdict = "";
+		int milesOver = 0;
+		String overEighty = "";
+		int extraOver = 0;
+		if (speedLimit < clockedSpeed) {
+			verdict += "Illegal";
+			milesOver += clockedSpeed - speedLimit;
+			if (clockedSpeed > 80) {
+				overEighty += "Yes";
+				extraOver = 250;
+			}
+			else 
+				overEighty += "No";
+		}
+		else {
+			verdict += "Legal";
+			overEighty += "No";
+		}
+		
+		double fine = 50.00 + milesOver*5 + extraOver;
+		System.out.println("\n" + "The clocked speed is: " + "\t" + verdict);
+		System.out.println("Miles over the speed limit: " + "\t" + milesOver);
+		System.out.println("Driving over 80 mph: " + "\t" + overEighty);
+		System.out.println("The fine is: " + "\t" + df.format(fine));
+	}
+
+}
