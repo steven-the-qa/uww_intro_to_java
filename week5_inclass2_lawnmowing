@@ -1,0 +1,54 @@
+package switchStatement;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class SwitchStatement {
+
+	public static void main(String[] args) {
+		//This is like the switch statement in Javascript
+		//The 'char' data type is a single character
+		//You can use the equality operator to compare characters, but not so with strings
+		DecimalFormat df = new DecimalFormat("$0.00");
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the lot size: ");
+		double lotSize = s.nextDouble();
+		System.out.println("Enter the number of times you want to pay the bill for the season: "+ "\nA for once\n"+ "B for twice\n"+ 
+		"C for 20 times ---------:");
+		char payments = s.next().charAt(0);
+		String numPay = "";
+		switch (payments) {
+		case 'A':
+			numPay = "Once";
+			break;
+		case 'a':
+			numPay = "Once";
+			break;
+		case 'B':
+			numPay = "Twice";
+			break;
+		case 'b':
+			numPay = "Twice";
+			break;
+		case 'C':
+			numPay = "20 Times";
+			break;
+		case 'c':
+			numPay = "20 Times";
+			break;
+		default:
+			numPay = "Please choose option A, B, or C";
+		}
+		double fee = (lotSize < 400)?20:(lotSize < 600)?25:35;
+		double servCharge = (numPay == "Once")?0:(numPay == "Twice")?5:(numPay == "20 Times")?3: 0;
+		double perPayment = (numPay == "Once")?fee*20:(numPay == "Twice")?(fee*10)+servCharge:(numPay == "20 Times")?fee+servCharge:0;
+		double total = (numPay == "Once")?perPayment:(numPay == "Twice")?perPayment*2:(numPay == "20 Times")?perPayment*20:0;
+		System.out.println("\n\n"+ "Lawn Mowing Information");
+		System.out.println("The lot size: " + "\t" + lotSize + "(Sq Ft)");
+		System.out.println("Number of payments: " + "\t" + numPay);
+		System.out.println("Weekly mowing fee: " + "\t" + df.format(fee));
+		System.out.println("Service charge: " + "\t" + df.format(servCharge));
+		System.out.println("Amount per payment: " + "\t" + df.format(perPayment));
+		System.out.println("\n" + "Total Payment: " + "\t" + df.format(total));
+	}
+
+}
