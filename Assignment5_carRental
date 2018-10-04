@@ -1,0 +1,80 @@
+package carRental;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class CarRental {
+
+	public static void main(String[] args) {
+
+		DecimalFormat df = new DecimalFormat("$0.00");
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter a vehicle model to rent: "+ "\nW for Jeep Wrangler\n"+ "C for Jeep Cherokee\n"+ 
+		"R for Land Rover ---------:");
+		char carChoice = s.next().charAt(0);
+		String car = "";
+		switch (carChoice) {
+		case 'W':
+			car = "Jeep Wrangler";
+			break;
+		case 'w':
+			car = "Jeep Wrangler";
+			break;
+		case 'C':
+			car = "Jeep Cherokee";
+			break;
+		case 'c':
+			car = "Jeep Cherokee";
+			break;
+		case 'R':
+			car = "Land Rover";
+			break;
+		case 'r':
+			car = "Land Rover";
+			break;
+		default:
+			car = "Please choose option W, C, or R";
+		}
+		
+		double perDay = (car == "Jeep Wrangler")?55:(car == "Jeep Cherokee")?85:(car == "Land Rover")?125:0;
+		System.out.println("Number of days to rent: ");
+		int days = s.nextInt();
+		System.out.println("Will you fill up the tank before returning the car? (Y or N): ");
+		char fillChoice = s.next().charAt(0);
+		String fill = "";
+		double total = days * perDay;
+		switch(fillChoice) {
+		case 'N':
+			fill = "No";
+			total += 52;
+			break;
+		case 'n':
+			fill = "No";
+			total += 52;
+			break;
+		case 'Y':
+			fill = "Yes";
+			break;
+		case 'y':
+			fill = "Yes";
+			break;
+		default: fill = fillChoice + " is not a valid choice. Please select Y for yes or N for no.";
+		}
+		
+		System.out.println("\n\n"+ "Car Rental Information");
+
+		System.out.println("Vehicle Model: " + "\t" + car);
+		System.out.println("Rental Days: " + "\t" + days);
+		System.out.println("Daily Rental: " + "\t" + df.format(perDay));
+		System.out.println("Fill Tank: " + "\t" + fill + "\n");
+		
+		if (fill == "Yes") {
+			System.out.println("Total Amount Due: " + days + " x " + df.format(perDay) + " = " + df.format(total));
+		}
+		else if (fill == "No") {
+			System.out.println("Total Amount Due: " + days + " x " + df.format(perDay) + " = " + df.format(days*perDay) + " + " + df.format(52) + " = " + df.format(total));
+		}
+		else System.out.println("Please make sure you entered Yes or No for filling up the tank");
+		
+	}
+
+}
