@@ -1,0 +1,51 @@
+package multiplyApp;
+import java.util.Scanner;
+public class MultiplyApp {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int number1 = (int)Math.floor(Math.random()*9+1);
+		int number2 = (int)Math.floor(Math.random()*9+1);
+		System.out.println("What is " + number1 + " x " + number2 + " = ?  Enter your answer here: ");
+		int answer = s.nextInt();
+		System.out.println("\n");
+		int incorrect = (int)Math.floor(Math.random()*4+1);
+		int correct = (int)Math.floor(Math.random()*4+1);
+		if (number1*number2 != answer) {
+			switch(incorrect) {
+			case 1:
+				System.out.println("No, but thanks for trying!");
+				break;
+			case 2:
+				System.out.println("Close, but not quite right.");
+				break;
+			case 3:
+				System.out.println("Wrong answer.");
+				break;
+			case 4:
+				System.out.println("No, but it's okay to be wrong.");
+				break;
+			default: System.out.println(incorrect + " is not a valid number here.");
+			}
+		}
+		else {
+			switch(correct) {
+			case 1:
+				System.out.println("Very good!");
+				break;
+			case 2:
+				System.out.println("Excellent!");
+				break;
+			case 3:
+				System.out.println("Nice work!");
+				break;
+			case 4:
+				System.out.println("Keep up the good work!");
+				break;
+			default: System.out.println(correct + " is not a valid number here.");
+			}
+		}
+		System.out.println(number1 + " x " + number2 + " = " + number1*number2 + "!");
+	}
+
+}
