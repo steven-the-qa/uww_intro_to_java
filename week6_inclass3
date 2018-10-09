@@ -1,0 +1,14 @@
+package projectOne;
+
+public class ProjectOne {
+
+	public static void main(String[] args) {
+		for (int i = 20; i >= 0 ; i--) {
+			String print = "";
+			print = i % 2 == 0?i + " ":"";
+			System.out.print(print);
+		}
+	}
+}
+
+//Alternate method using ternary operator for "week6_inclass2"
