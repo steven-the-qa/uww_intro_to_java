@@ -1,1 +1,47 @@
+package penniesForPay;
 
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class PenniesForPay {
+
+	public static void main(String[] args) {
+		DecimalFormat df = new DecimalFormat("$0.00");
+		Scanner s = new Scanner(System.in);
+		System.out.print("For how many days will the pay double?");
+		int days = s.nextInt();
+		double total = 0;
+		if (days <= 0) {
+			System.out.println("The number of days must be at least one \n");
+		}
+		System.out.println("Day"+"\t\t"+"Total pay");
+		System.out.println("-------------------------");
+		for (int i = 1; i <= days; i++) {
+			System.out.println(i + "\t\t" + df.format(Math.pow(2, i-1)/100));
+			total += Math.pow(2, i-1)/100;
+		}
+		System.out.println("-------------------------");
+		System.out.println("Total\t\t" + df.format(total));
+	}
+
+}
+
+/* OUTPUT for 12 days:
+For how many days will the pay double?12
+Day		Total pay
+-------------------------
+1		$0.01
+2		$0.02
+3		$0.04
+4		$0.08
+5		$0.16
+6		$0.32
+7		$0.64
+8		$1.28
+9		$2.56
+10		$5.12
+11		$10.24
+12		$20.48
+-------------------------
+Total		$40.95
+*/
