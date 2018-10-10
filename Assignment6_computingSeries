@@ -1,1 +1,50 @@
+package computingSeries;
+import java.util.Scanner;
+public class ComputingSeries {
 
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int count = 0;
+		System.out.println("Enter an integer greater than 1: ");
+		int num = s.nextInt();
+		if (num <= 1) {
+			System.out.println("The number must be greater than 1.");
+		}
+		else {
+			System.out.print("\n" + "The series is: ");
+			while (num > 1) {
+				if (num % 2 == 0) {
+					num /= 2;
+					System.out.print(num + " ");
+					count++;
+				}
+				else {
+					num *= 3;
+					num += 1;
+					System.out.print(num + " ");
+					count++;
+				}
+			}
+			System.out.print("\n\n" + "It took " + count + " steps to reach 1");
+		}
+	}
+
+}
+
+/* OUTPUT for 40:
+Enter an integer greater than 1: 
+40
+
+The series is: 20 10 5 16 8 4 2 1 
+
+It took 8 steps to reach 1
+*/
+
+/*OUTPUT for 3:
+Enter an integer greater than 1: 
+3
+
+The series is: 10 5 16 8 4 2 1 
+
+It took 7 steps to reach 1
+*/
